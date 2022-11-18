@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+html{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.marcus-part{
+	margin: 0;
+    background: linear-gradient(60deg, rgb(21, 0, 105) 0%, rgb(23, 58, 161) 100%);
+    	display: flex;
+    
+    height: 120%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.swiper-wrapper{
+    font-size: .8em;
+}
+
+.swiper-diretoria{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+}
+
+.slide-container{
+    max-width: 1330px;
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+
+}
+
+.slide-content{
+    margin: 0 40px;
+    overflow: hidden;
+    
+    border-radius: 25px;
+}
+
+.card-dir{
+    position: relative ;
+    width: 300px !important;
+    height: 420px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgb(0, 0, 0, 0.5);
+    border-radius: 5px;
+    background: rgb(255, 255, 255, 0.1);
+    overflow: hidden;
+  
+    transform: perspective(1000px);
+}
+
+.card-content-diretoria{
+    z-index: 99;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 13%;
+    text-align: center;
+    padding-top: 7%;
+    padding-bottom: 7%;
+
+    justify-content: space-between;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card-content-diretoria:hover{
+    transform: translateY(0px);
+    opacity: 1;
+    transform: translateZ(80px);
+    transform-style: preserve-3d;
+}
+
+
+
+
+.card-img{
+    width: 100%;
+    height: 100%;
+    pointer-events: none !important;
+}
+
+.swiper-slide{
+    filter:brightness(20%);
+    background: #265df2;
+}
+.swiper-slide-next{
+    filter: blur(0) !important;
+    background: #fff;
+}
+
+.image-content{
+    position: absolute;
+    row-gap: 5px;
+    height: 100%;
+    z-index: 0;
+    width: 100%;
+}
+
+
+.card-image{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.card-image .card-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+.rede-button{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.rede-button:hover{
+    cursor: url("../img/cursor/point.png") 10 0, auto !important; 
+}
+.rede-button a:hover{
+    cursor: url("../img/cursor/point.png") 10 0, auto !important; 
+}
+
+.button-diretoria{
+    margin-top: 5px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 6px;
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
+.button:hover{
+    background: #265df2;
+}
+
+.swiper-navBtn{
+    color: #6E93f7;
+    transition: color 0.3s ease;
+}
+
+.swiper-navBtn:hover{
+    color: #4070F4;
+}
+
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+    font-size: 40px;
+}
+.swiper-button-next{
+    right: 0;
+}
+.swiper-button-prev{
+    left: 0;
+}
+
+.swiper-pagination.bullet{
+    background-color: #bbb;
+    opacity: 1;
+}
+.swiper-pagination.bullet-active{
+    background-color: #4070F4;
+    width: 120%;
+}
+
+@media screen and (max-width:768px){
+    .swiper-navBtn{
+        display: none;
+    }
+    .slide-content{
+        margin: 0 10px;
+    }
+}
+
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right {
+    background-image: none
+}
+
+
+
+.stats{
+    left: 0;
+    width: 80%;
+}
+
+.name-dir{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rpgui-progress{
+    margin-bottom: 16px;
+}
+
+.name{
+    font-size: 38px;
+    font-weight: 200;
+}
+
+.nickname{
+    font-weight: 200;
+    font-style: italic;
+}
+
+.description{
+    width: 220px ;
+    font-weight: 200;
+    font-size: 18px;
+    text-align: center;
+    color: black;
+}
+
+.agroup{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

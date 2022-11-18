@@ -1,0 +1,52 @@
+.arrow-acelerador {
+    position: relative;
+    background: transparent;
+    border: none;
+  }
+  .arrow-acelerador svg {
+    width: 100px;
+    height: auto;
+    margin: 0 2rem;
+    cursor: pointer;
+    overflow: visible;
+  }
+  .arrow-acelerador svg polygon,
+  .arrow-acelerador svg path {
+    fill: white;
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+  }
+  .arrow-acelerador svg:hover polygon, .arrow-acelerador svg:hover path {
+    transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+    fill: #bf36ff;
+  }
+  .arrow-acelerador svg:hover .arrow {
+    animation: arrow-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+  }
+  .arrow-acelerador svg:hover .arrow-fixed {
+    animation: arrow-fixed-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+  }
+  
+  @keyframes arrow-anim {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    5% {
+      transform: translateX(-0.1rem);
+    }
+    100% {
+      transform: translateX(1rem);
+      opacity: 0;
+    }
+  }
+  @keyframes arrow-fixed-anim {
+    5% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

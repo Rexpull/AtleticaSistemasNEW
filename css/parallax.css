@@ -1,0 +1,130 @@
+@font-face {
+  font-family: top;
+  src: url(../fonts/OldSchoolAdventures-42j9.ttf
+  );
+}
+*{
+  box-sizing: border-box;
+}
+
+html,
+body{
+  background-color: #FEDCC8;
+}
+
+.s1{
+  position: relative;
+    overflow: hidden;
+    height: 100vh  
+}
+
+.parallax-backg{
+  background: rgb(204,119,15);
+background: linear-gradient(0deg, rgba(204,119,15,1) 10%, rgba(230,197,104,1) 25%, rgba(226,233,121,1) 35%, rgba(199,199,188,1) 49%, rgba(92,84,168,1) 66%, rgba(0,29,142,1) 92%);
+height: 100%;
+}
+.parallax-backg::after{
+--color-scanline: rgba(255,255,255,.075);
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: repeating-linear-gradient(to bottom, var(--color-scanline), var(--color-scanline) 1px, transparent 1px, transparent 5px);
+}
+.parallax {
+  perspective: 130px;
+  scrollbar-width:0px;
+  overflow-x:hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-left: -1800px;
+  width: 100%;
+}
+::-webkit-scrollbar{
+  width: 0px !important;
+}
+.parallax__layer{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+
+}
+
+.parallax__layer__0{
+    transform: translateZ(-300px) scale(4);
+}
+.parallax__layer__1{
+    transform: translateZ(-250px) scale(3.5);
+}
+.parallax__layer__2{
+    transform: translateZ(-200px) scale(3);
+}
+.parallax__layer__3{
+    transform: translateZ(-150px) scale(2.5);
+}
+.parallax__layer__4{
+    transform: translateZ(-100px) scale(2);
+}
+.parallax__layer__5{
+    transform: translateZ(-50px) scale(1.5);
+}
+.parallax__layer__6{
+    transform: translateZ(0px) scale(1);
+    z-index: 6;
+    fill: red;
+}
+
+
+
+.parallax__layer img{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 650px ;
+    margin-left: -650px;
+}
+
+.parallax__cover{
+  background: #2D112B;
+  display: flex;
+  align-items: center !important;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 6;
+  width: 100%;
+}
+
+
+.down-gif{
+  position: fixed;
+  bottom: 4%;
+  z-index: 9999;
+  left: 50%;
+  width: 65px;
+  height: 65px;
+}
+
+@for $i from 0 through $parallax__layers {
+  $x: ($parallax__layers - $i) / 2;
+  .parallax__layer__#{$i}{
+     transform: translateZ(-100 * $x#{px}) scale($x + 1);
+  }
+}

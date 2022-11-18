@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+
+
+/* Stars
+  ---------------------------------------------- */
+  .stars{
+    
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    overflow: visi;
+    z-index: 0;
+    filter: blur(1px);
+    bottom: -50%;
+  }
+  .stars2{
+    
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    overflow: visi;
+    z-index: -1;
+    filter: blur(1px);
+    bottom: -50%;
+  }
+  .starWrap{
+    height: 60%;
+    width: 100%; 
+    position:relative;
+  }
+  .starProject{
+    overflow: hidden;
+  }
+  .starReflect{
+    overflow: hidden;
+    height: 40%;
+    opacity: 0.9;
+    
+  }
+  #stars{
+    position: absolute;
+    width: 120%;
+    border-radius: 100%;
+    margin: auto;
+    left: -10%;
+    right: 0;
+    animation: stars 180s linear infinite;  
+    transform: rotate(0deg);
+    top: -35%;
+  }
+
+  @keyframes stars{ 
+    100% {transform: rotate(-360deg);}
+  }
+
+  #starReflection{
+    position: absolute;
+    width: 120%;
+    border-radius: 100%;
+    margin: auto;
+    left: -10%;
+    right: 0;
+    animation: starsReflect 120s linear infinite;  
+    transform: rotate(0deg);
+    top:initial;
+    bottom: -102%;
+  }
+  @keyframes starsReflect{ 
+    100% {transform: rotate(360deg);}
+  }
+
+
+ 
+
+
+
+
+
