@@ -45,11 +45,6 @@ var swiper = new Swiper(".slide-content", {
   });
 
 
-  setTimeout(()=>{
-    that.swiper.loopDestroy();
-    that.swiper.loopCreate();
-    console.log('reborn!')
-  })
 
   var swiper = new Swiper(".slide-content-atletica", {
     slidesPerView: 3,

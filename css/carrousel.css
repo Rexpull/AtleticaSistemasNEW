@@ -4,7 +4,8 @@
   position: absolute;
   align-items: center;
   justify-content: space-between;
-  width: 70%;
+  width: 60%;
+  height: 20%;
 }
 
 
@@ -18,8 +19,8 @@
     font-family: sans-serif;
   min-height: 600px;
   
-  margin-bottom: 620px;
-  left: 45%;
+  margin-bottom: 760px;
+  transform: translateX(50px);
 }
 
 
@@ -84,8 +85,8 @@
 
 
 .gallery-3d {
-  margin-top: 300px;
-  margin-bottom: 100px;
+  margin-top: 100px;
+  
   position: relative;
   width: 300px;
   transform-style: preserve-3d;
@@ -181,7 +182,7 @@
 
 
 
-
+/* Setas do carrossel */
 .arrow-acelerador {
   position: relative;
   background: transparent;
@@ -203,11 +204,11 @@
   transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
   fill: #bf36ff;
 }
-.arrow-acelerador svg:hover .arrow {
-  animation: arrow-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+.arrow-acelerador svg:active .arrow {
+  animation: arrow-anim 1s cubic-bezier(0.2, 1, 0.3, 1) infinite;
 }
-.arrow-acelerador svg:hover .arrow-fixed {
-  animation: arrow-fixed-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+.arrow-acelerador svg:active .arrow-fixed {
+  animation: arrow-fixed-anim 1s cubic-bezier(0.2, 1, 0.3, 1) infinite;
 }
 
 @keyframes arrow-anim {
@@ -233,4 +234,10 @@
   100% {
     opacity: 1;
   }
+}
+
+.toastify{
+  padding: 20px 28px !important;
+  font: 400;
+  font-size: larger;
 }
