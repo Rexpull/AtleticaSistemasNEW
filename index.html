@@ -1555,12 +1555,9 @@
 <!-- scripts -->
 
 <!-- ====== Firebase Script, must be loaded before user Scripts!!! ====== -->
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script>
     // Your web app's Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyDpJmcpSqBkQs1JJvRzaRXOD2C6HpB-DY8",
@@ -1572,7 +1569,7 @@
     };
   
     // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
+    const app = firebase.initializeApp(firebaseConfig);
 </script>
 
 <script src="js/particles.js"></script>
@@ -1584,6 +1581,7 @@
 <script src="js/cart.js"></script>
 <script src="js/vanilla-tilt.js"></script>
 <script src="js/animation.js"></script>
+<script src="js/firestore.js"></script>
 
 <!-- ====== JQeuery CDN Link ====== -->
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
