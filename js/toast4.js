@@ -27,7 +27,7 @@ var myToast = Toastify(options);
 // Displaying toast on manual action `Try`
 document.getElementById("toast4").addEventListener("click", function() {
   Toastify({
-    text: "Adicionado ao carrinho",
+    text: "Item adicionado!",
     duration: 3000,
     gravity: "bottom", 
     position: "right", 
