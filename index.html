@@ -1551,29 +1551,29 @@
     <!--E:Menubar END-->
 
 
-    <!--S:Vanilla Tilt Config-->
-        <script>
-            VanillaTilt.init(document.querySelectorAll(".swiper-slide"), {
-            max:20,
-            speed:400,
-            glare: true,
-            "max-glare": 0.3,
-            gyroscopeMaxAngleZ:0,
-            gyroscopeMinAngleZ:0,
-        });
-        </script>
-    <!--E:Vanilla Tilt Config-->
-
-
-    <!--Carrinho-->
-    <script>
-        $("#carrinhoModal").on("shown.bs.modal", atualizarPopup);
-    </script>
-
-
     
 <!-- scripts -->
 
+<!-- ====== Firebase Script, must be loaded before user Scripts!!! ====== -->
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDpJmcpSqBkQs1JJvRzaRXOD2C6HpB-DY8",
+      authDomain: "atleticasistemas-e579c.firebaseapp.com",
+      projectId: "atleticasistemas-e579c",
+      storageBucket: "atleticasistemas-e579c.appspot.com",
+      messagingSenderId: "669937499243",
+      appId: "1:669937499243:web:8a418c8fe358067331c52e"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+</script>
 
 <script src="js/particles.js"></script>
 <script src="js/particles.min.js"></script>
@@ -1605,6 +1605,24 @@
 <script src="js/toast6.js"></script>
 <script src="js/toast7.js"></script>
 <script src="js/toast8.js"></script>
+
+<!-- Carrinho-->
+<script>
+    $("#carrinhoModal").on("shown.bs.modal", atualizarPopup);
+</script>
+
+<!--S:Vanilla Tilt Config-->
+<script>
+    VanillaTilt.init(document.querySelectorAll(".swiper-slide"), {
+    max:20,
+    speed:400,
+    glare: true,
+    "max-glare": 0.3,
+    gyroscopeMaxAngleZ:0,
+    gyroscopeMinAngleZ:0,
+});
+</script>
+<!--E:Vanilla Tilt Config-->
 
 
 </body>
