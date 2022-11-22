@@ -23,18 +23,54 @@ membrosCollection.get().then((querySnapshot) => {
 
         $('#tabelaMembrosAtletica tbody').append(row);
     });
+    $('#tabelaMembrosAtletica tbody .edit').click(function() {
+        const id = $(this).closest('tr').data('id');
+        const data = $(this).closest('tr').data('data');
+        $('#addEmployeeModal').data('id', id);
+        $('#addEmployeeModal #formNome').val(data.nome);
+        $('#addEmployeeModal #formApelido').val(data.apelido);
+        $('#addEmployeeModal #formCargo').val(data.cargo);
+        $('#addEmployeeModal #formLink').val(data.link);
+    });
+    $('#tabelaMembrosAtletica tbody .delete').click(function() {
+        const id = $(this).closest('tr').data('id');
+        $('#deleteEmployeeModal').data('id', id);
+    });
 });
 
 $(document).ready(() => {
+    $('#addMembroBtn').click(() => {
+        $('#addEmployeeModal').data('id', null);
+        $('#addEmployeeModal #formNome').val(null);
+        $('#addEmployeeModal #formApelido').val(null);
+        $('#addEmployeeModal #formCargo').val(null);
+        $('#addEmployeeModal #formLink').val(null);
+    });
+
     $('#addEmployeeModal form').submit(async e => {
         e.preventDefault();
         $('#addEmployeeModal').modal('hide');
-        await membrosCollection.add({
+        const id = $('#addEmployeeModal').data('id');
+        const data = {
             nome: $('#addEmployeeModal #formNome').val() || '',
             apelido: $('#addEmployeeModal #formApelido').val() || '',
             cargo: $('#addEmployeeModal #formCargo').val() || '',
             link: $('#addEmployeeModal #formLink').val() || '',
-        });
+        };
+        if (id)
+            await membrosCollection.doc(id).set(data);
+        else
+            await membrosCollection.add(data);
+        window.location.reload();
+    });
+
+    $('#deleteEmployeeModal form').submit(async e => {
+        e.preventDefault();
+        $('#deleteEmployeeModal').modal('hide');
+        const id = $('#deleteEmployeeModal').data('id');
+        if (id) {
+            await membrosCollection.doc(id).delete();
+        }
         window.location.reload();
     });
 })
