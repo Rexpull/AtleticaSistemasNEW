@@ -53,7 +53,7 @@ $(document).ready(() => {
     $('#addEmployeeModal #formPhoto').change(e => {
         $('#addEmployeeModal input[type=submit]').attr('disabled', true);
         const file = e.target.files[0];
-        membrosPhotosStorage.put(file).then(snapshot => {
+        membrosPhotosStorage.child(uuidv4()).put(file).then(snapshot => {
             snapshot.ref.getDownloadURL().then(url => {
                 $('#addEmployeeModal').data('imagem', url);
                 $('#addEmployeeModal input[type=submit]').attr('disabled', null);
@@ -89,3 +89,9 @@ $(document).ready(() => {
         window.location.reload();
     });
 })
+
+function uuidv4() {
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
+}
