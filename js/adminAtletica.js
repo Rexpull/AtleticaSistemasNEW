@@ -1,5 +1,6 @@
 
 const membrosCollection = firebase.firestore().collection('membros');
+const membrosPhotosStorage = firebase.storage().ref().child('membros');
 
 membrosCollection.get().then((querySnapshot) => {
     $('#tabelaMembrosAtletica tbody').html();
@@ -27,6 +28,7 @@ membrosCollection.get().then((querySnapshot) => {
         const id = $(this).closest('tr').data('id');
         const data = $(this).closest('tr').data('data');
         $('#addEmployeeModal').data('id', id);
+        $('#addEmployeeModal').data('imagem', data.imagem);
         $('#addEmployeeModal #formNome').val(data.nome);
         $('#addEmployeeModal #formApelido').val(data.apelido);
         $('#addEmployeeModal #formCargo').val(data.cargo);
@@ -41,10 +43,22 @@ membrosCollection.get().then((querySnapshot) => {
 $(document).ready(() => {
     $('#addMembroBtn').click(() => {
         $('#addEmployeeModal').data('id', null);
+        $('#addEmployeeModal').data('imagem', null);
         $('#addEmployeeModal #formNome').val(null);
         $('#addEmployeeModal #formApelido').val(null);
         $('#addEmployeeModal #formCargo').val(null);
         $('#addEmployeeModal #formLink').val(null);
+    });
+
+    $('#addEmployeeModal #formPhoto').change(e => {
+        $('#addEmployeeModal input[type=submit]').attr('disabled', true);
+        const file = e.target.files[0];
+        membrosPhotosStorage.put(file).then(snapshot => {
+            snapshot.ref.getDownloadURL().then(url => {
+                $('#addEmployeeModal').data('imagem', url);
+                $('#addEmployeeModal input[type=submit]').attr('disabled', null);
+            })
+        });
     });
 
     $('#addEmployeeModal form').submit(async e => {
@@ -56,6 +70,7 @@ $(document).ready(() => {
             apelido: $('#addEmployeeModal #formApelido').val() || '',
             cargo: $('#addEmployeeModal #formCargo').val() || '',
             link: $('#addEmployeeModal #formLink').val() || '',
+            imagem: $('#addEmployeeModal').data('imagem') || '',
         };
         if (id)
             await membrosCollection.doc(id).set(data);

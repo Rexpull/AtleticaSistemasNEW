@@ -5,6 +5,7 @@ membrosCollection.get().then((querySnapshot) => {
 
         const template = document.querySelector("#membrosCardsTemplate");
         const copy = template.content.cloneNode(true);
+        copy.querySelector('#fotoPerfil').src = membroJson.imagem;
         copy.querySelector('.name-dir .name').innerHTML = membroJson.nome;
         copy.querySelector('.name-dir .nickname').innerHTML = membroJson.apelido;
         copy.querySelector('.name-dir .description').innerHTML = membroJson.cargo;
