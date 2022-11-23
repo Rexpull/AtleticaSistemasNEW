@@ -9,6 +9,7 @@ membrosCollection.get().then((querySnapshot) => {
         copy.querySelector('.name-dir .name').innerHTML = membroJson.nome;
         copy.querySelector('.name-dir .nickname').innerHTML = membroJson.apelido;
         copy.querySelector('.name-dir .description').innerHTML = membroJson.cargo;
+        copy.querySelector('a.rede-button').href = membroJson.link;
         template.parentNode.appendChild(copy);
     });
 
