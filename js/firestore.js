@@ -1,15 +1,15 @@
 const membrosCollection = firebase.firestore().collection('membros');
 membrosCollection.get().then((querySnapshot) => {
     querySnapshot.docs.forEach((doc) => {
-        const membroJson = doc.data();
+        const json = doc.data();
 
         const template = document.querySelector("#membrosCardsTemplate");
         const copy = template.content.cloneNode(true);
-        copy.querySelector('#fotoPerfil').src = membroJson.imagem;
-        copy.querySelector('.name-dir .name').innerHTML = membroJson.nome;
-        copy.querySelector('.name-dir .nickname').innerHTML = membroJson.apelido;
-        copy.querySelector('.name-dir .description').innerHTML = membroJson.cargo;
-        copy.querySelector('a.rede-button').href = membroJson.link;
+        copy.querySelector('#fotoPerfil').src = json.imagem;
+        copy.querySelector('.name-dir .name').innerHTML = json.nome;
+        copy.querySelector('.name-dir .nickname').innerHTML = json.apelido;
+        copy.querySelector('.name-dir .description').innerHTML = json.cargo;
+        copy.querySelector('a.rede-button').href = json.link;
         template.parentNode.appendChild(copy);
     });
 
@@ -66,5 +66,25 @@ membrosCollection.get().then((querySnapshot) => {
         "max-glare": 0.3,
         gyroscopeMaxAngleZ:0,
         gyroscopeMinAngleZ:0,
+    });
+});
+
+const produtosCollection = firebase.firestore().collection('produtos');
+produtosCollection.get().then((querySnapshot) => {
+    window.produtosDisponiveis = {};
+    querySnapshot.docs.forEach((doc, index) => {
+        const id = doc.id;
+        const json = doc.data();
+        window.produtosDisponiveis[id] = json;
+
+        const template = document.querySelector("#produtosCardsTemplate");
+        const copy = template.content.cloneNode(true);
+        copy.querySelector('.card-3d').style.setProperty('--i', index + 1);
+        copy.querySelector('.card-3d').style.setProperty('--card-amount', querySnapshot.docs.length);
+        copy.querySelector('.card-3d-img img').src = json.imagem;
+        copy.querySelector('.card-3d-title').innerHTML = json.nome;
+        // copy.querySelector('').innerHTML = json.preco;
+        copy.querySelector('.link_wrapper button').onclick = () => adicionarAoCarrinho(id);
+        template.parentNode.appendChild(copy);
     });
 });
