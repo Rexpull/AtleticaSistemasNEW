@@ -88,20 +88,18 @@ const codigoProduto = `
 </div>
 `;
 
-function adicionarAoCarrinho(index) {
+function adicionarAoCarrinho(id) {
   const carrinhoArmazenado = JSON.parse(localStorage.getItem("carrinho")) || [];
-  const indexItem = carrinhoArmazenado.findIndex((item) => item.id === index);
+  const indexItem = carrinhoArmazenado.findIndex((item) => item.id === id);
 
   if (indexItem !== -1) {
     carrinhoArmazenado[indexItem].quantity += 1;
   } else {
     carrinhoArmazenado.push({
-      id: index,
+      id: id,
       quantity: 1,
     });
   }
-
-  
 
   localStorage.setItem("carrinho", JSON.stringify(carrinhoArmazenado));
 }
@@ -111,22 +109,12 @@ function atualizarPopup() {
   let subtotal = 0;
   const htmlList = carrinhoArmazenado.map((item) => {
     const subtotalProduto =
-      itensDisponiveis.find((itemD) => itemD.id == item.id).price *
-      item.quantity;
+      window.produtosDisponiveis[item.id].preco * item.quantity;
     subtotal += subtotalProduto;
     return codigoProduto
-      .replace(
-        "[IMAGE_URL]",
-        itensDisponiveis.find((itemD) => itemD.id == item.id).image
-      )
-      .replace(
-        "[NAME]",
-        itensDisponiveis.find((itemD) => itemD.id == item.id).name
-      )
-      .replace(
-        "[DESCRIPTION]",
-        itensDisponiveis.find((itemD) => itemD.id == item.id).name
-      )
+      .replace("[IMAGE_URL]", window.produtosDisponiveis[item.id].imagem)
+      .replace("[NAME]", window.produtosDisponiveis[item.id].nome)
+      .replace("[DESCRIPTION]", window.produtosDisponiveis[item.id].nome)
       .replace("[QUANTIDADE]", item.quantity)
       .replace(
         "[PRICE]",
@@ -162,14 +150,13 @@ function enviarCarrinhoAoWhatsapp(numeroWhats) {
   const mensagem = carrinhoArmazenado
     .map((item) => {
       const subtotal = (
-        itensDisponiveis.find((itemD) => itemD.id == item.id).price *
-        item.quantity
+        window.produtosDisponiveis[item.id].preco * item.quantity
       ).toLocaleString("pt-br", {
         style: "currency",
         currency: "BRL",
       });
       return `Item ${
-        itensDisponiveis.find((itemD) => itemD.id == item.id).name
+        window.produtosDisponiveis[item.id].nome
       }, valor ${subtotal}`;
     })
     .join("\n");
@@ -185,4 +172,3 @@ function enviarCarrinhoAoWhatsapp(numeroWhats) {
   localStorage.setItem("carrinho", null);
   $("#carrinhoModal").modal("hide");
 }
-
