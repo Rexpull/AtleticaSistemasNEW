@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="css/rpgui.min.css" >
     <link rel="stylesheet" href="css/parallax.css">
     <link rel="stylesheet" href="css/particles.js-master/demo/css/style.css">
+    <link rel="stylesheet" href="css/faleconosco.css"> <!--Fale conosco-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     
 
@@ -61,7 +62,7 @@
                         <a href="#" style="z-index: 99;">Atlética</a>
                     </div>
                 
-                    <button class="pacman-button " title="Fale Conosco">
+                    <button class="pacman-button " title="Fale Conosco" onclick="openForm()">
                         <a href="#" class="button-label">Fale Conosco</a>
                         <div class="ghost"></div>
                         <div class="pacman"></div>
@@ -1183,7 +1184,45 @@
     </div>
     
 
-   
+    <!--S:Parte do Teodoro (Fale Conosco) -->
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+          <h1>FALE CONOSCO</h1>
+      
+          <label for="nome"><b>Nome</b></label>
+          <input type="text" placeholder="Enter Email" name="nome" required>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Password" name="email" required>
+      
+          <label for="city"><b>Cidade</b></label>
+          <input type="text" placeholder="Enter Cidade" name="city" required>
+      
+          <label for="tel"><b>Telefone</b></label>
+          <input type="text" placeholder="Enter Telefone" name="tel" required>
+      
+          <label for="mensage"><b>Mensagem</b></label>
+          <input type="text" placeholder="Enter Mensagem" name="mensage" required>
+      
+      
+          <button type="submit" class="btn" onclick="sendMail(); return false">Login</button>
+          <button type="button" class="btn cancel" onclick="closeForm(); return false">Close</button>
+        </form>
+        <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+      </script>
+      <script>
+          function sendMail() {
+              var link = "mailto:lucasteodoro.lm@gmail.com" + "?cc=myCCaddress@gmail.com" + "&subject=" + encodeURIComponent("EMAIL") + "&body=" + encodeURIComponent(document.getElementById('myForm').value);
+              window.location.href = link;
+                  function closeForm() {
+                      document.getElementById("myForm").style.display = "none";
+                  }
+          }
+      </script>
+      </div>
 
     
     <!--
@@ -1266,6 +1305,17 @@
 <!-- Carrinho-->
 <script>
     $("#carrinhoModal").on("shown.bs.modal", atualizarPopup);
+</script>
+
+<!-- Fale Conosco-->
+<script>
+    function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
 </script>
 
 <!--S:Vanilla Tilt Config-->
