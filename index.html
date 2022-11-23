@@ -1209,8 +1209,9 @@
       </script>
       <script>
           function sendMail() {
-              var link = "mailto:lucasteodoro.lm@gmail.com" + "?cc=myCCaddress@gmail.com" + "&subject=" + encodeURIComponent("EMAIL") + "&body=" + encodeURIComponent(document.getElementById('myForm').value);
+              var link = "mailto:lucasteodoro.lm@gmail.com?subject=Contato+Sistemáticos&body=" + encodeURIComponent(`Nome: ${document.querySelector('#myForm input[name=nome]').value}\nEmail: ${document.querySelector('#myForm input[name=email]').value}\nMensagem: ${document.querySelector('#myForm input[name=mensage]').value}`);
               window.location.href = link;
+              closeForm();
                   function closeForm() {
                       document.getElementById("myForm").style.display = "none";
                   }
