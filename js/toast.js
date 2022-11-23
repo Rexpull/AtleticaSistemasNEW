@@ -16,7 +16,7 @@ var options = {
   },
   close: true,
   style: {
-    background: "linear-gradient(to right, #660996, #d4b6d1)",
+    background: "linear-gradient(to right, #660996, #be60c1)",
   }
 };
 
@@ -25,17 +25,18 @@ var myToast = Toastify(options);
 
 
 // Displaying toast on manual action `Try`
-document.getElementById("toast7").addEventListener("click", function() {
-  Toastify({
-    text: "Item adicionado!",
-    duration: 3000,
-    gravity: "bottom", 
-    position: "right", 
-    close:  true,
-    style: {
-      background: bgColors[i % 2],
-    }
-  }).showToast();
-  i++;
-});
-
+$(document).ready(() => {
+  $('.toast-enable').click(() => {
+    Toastify({
+      text: "Item adicionado!",
+      duration: 3000,
+      gravity: "bottom", 
+      position: "right", 
+      close:  true,
+      style: {
+        background: bgColors[i % 2],
+      }
+    }).showToast();
+    i++;
+  })
+})
