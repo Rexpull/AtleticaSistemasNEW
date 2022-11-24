@@ -26,6 +26,7 @@
 html{
   scroll-snap-type: y mandatory !important;
   overflow-y: scroll !important;
+  scroll-behavior: smooth !important;
 }
 
 .nav_bar{
@@ -128,28 +129,18 @@ html{
 
 .texts h1:nth-of-type(1){
   top: 10%;
-  left: 23%;
+  left: -70%;
+  color: #f1eb35 !important;
 }
 .texts h1:nth-of-type(2){
-  left: 40%;
+  left: 35%;
   bottom: 0;
 }
-.texts h1:nth-of-type(3){
-  top: 0;
-  right: 25%;
-}
-.texts h1:nth-of-type(4){
-  right: 0;
-  bottom: 20%;
-  
-  white-space: nowrap; /* deixa o conteudo em uma unica linha */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* ajusta como for necessario */
-}
+
 
 @keyframes typing {
     from { width: 0 }
-    to { width: 22% }
+    to { width: 135% }
 }
 
 
@@ -174,9 +165,9 @@ html{
       font-family: 'Fira Mono', monospace;
       letter-spacing: -7px;
     }
-    .insira{
+  .insira{
         animation: glitch 2.0s linear infinite,
-        typing 3.5s steps(25, end),
+        typing 2.5s steps(6, end),
         blink-caret .5s step-end infinite;
       }
   

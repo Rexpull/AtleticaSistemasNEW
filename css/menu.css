@@ -4,13 +4,14 @@
     box-sizing: border-box;
 }
 :root{
-    --clr: #222327;
+    --clr: #fff;
 }
 
 #menu{
     position: fixed;
     display: none;
 }
+
 .navigation{
     
     z-index: 1;
@@ -34,7 +35,9 @@
     position: relative;
     list-style: none;
     width: 70px;
-    height: 70px;
+    height: 89px;
+    margin: 0;
+    padding: 0;
     z-index: 1;
 }
 .navigation ul li a{
@@ -42,26 +45,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     text-align: center;
     font-weight: 500;
 }
-.navigation ul li a .icon{
+.navigation ul li a .icon-menu{
     
     position: relative;
     display: block;
     line-height: 80px;
-    font-size: 1.5em;
+    font-size: 3.5em;
     text-align: center;
     transition: 0.5s;
-    color: #fff;
+    color: black;
+}
+
+.navigation ul li:hover a .icon-menu{
+    
+    transform: translateX(35px);
 }
 
 .navigation ul li a .text{
     position: absolute;
-    color: #fff;
-    font-weight: 0.75em;
+    color: var(--clr);
+    font-weight: 400;
+    font-size: 0.75em;
     letter-spacing: 0.05em;
     transition: 0.5s;
     opacity: 0;
@@ -71,15 +80,40 @@
 }
 .indicator{
     position: absolute;
-    right: 36%;
+    right: 32%;
     top: 0%;
-    width: 70px;
-    height: 70px;
+    width: 89px;
+    height: 89px;
     background: #29fd53;
     border-radius: 50px;
     border: 6px solid var(--clr);
     transition: 0.5s;
 }
+
+.indicator::before{
+    content: '';
+    position: absolute;
+    top:50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px ;
+    box-shadow: 0px -10px 0 0 var(--clr);
+}
+
+.indicator::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius:20px ;
+    box-shadow: 0px -10 0 0 var(--clr) ;
+}
+
 
 .navigation ul li:nth-child(1).active ~ .indicator
 {
@@ -101,3 +135,4 @@
 {
     transform: translateY(calc(70px * 4));
 }
+
