@@ -62,9 +62,9 @@
                 
                 <div class="text-head">
                     <div class="links" style="z-index: 999 !important;" >
-                        <a href="#" style="z-index: 99 !important;">Sobre nós</a>
-                        <a href="# " style="z-index: 99;">Produtos 2022</a>
-                        <a href="#" style="z-index: 99;">Atlética</a>
+                        <a href="#s3" style="z-index: 99 !important;">Sobre nós</a>
+                        <a href="#s1 " style="z-index: 99;">Produtos 2022</a>
+                        <a href="#s2" style="z-index: 99;">Atlética</a>
                     </div>
                 
                     <button class="pacman-button " title="Fale Conosco" onclick="openForm()">
@@ -954,6 +954,7 @@
             <div id="retrobg-ground">
                 <!--Theodoro-->
                 <section class="home_rodape animate__animated animate__slideInUp">
+                    <h1>Desenvolvedores:</h1>
                     <div class="profile">
                         <span>Willian</span>
                         <img src="img/Willian.jpeg" alt="">
@@ -974,7 +975,7 @@
                         <span>Marcus</span>
                         <img src="img/Marcos.jpeg" alt="">
                         <div class="middle name"> 
-                            <a class="btn_PI" href="#">
+                            <a class="btn_PI" href="https://www.linkedin.com/in/marcus-vinicius-1a389b1b9/">
                                 <i class="fa-brands fa-linkedin-in"></i>
                             </a>
                             <a class="btn_PI" href="https://www.instagram.com/marcusv_braga/">
@@ -1004,7 +1005,7 @@
 
                     <div class="profile">
                         <span>Teodoro</span>
-                        <img src="img/Teodoro.jpeg" alt="">
+                        <img src="img/Teodoro.jpeg" style="width: 110px; height: 110px;" alt="">
                         <div class="middle name"> 
                             <a class="btn_PI" href="https://www.linkedin.com/in/lucas-teodoro-de-melo-57b515258">
                                 <i class="fa-brands fa-linkedin-in"></i>
@@ -1151,7 +1152,7 @@
         aria-hidden="true">
         <div class="shopping-cart modal-dialog" role="document">
             <div class="modal-content rpgui-container framed-golden-2">
-
+                <button style="position: absolute; right:0; width:30px; height:30px; cursor: pointer; z-index: 999;" onclick="closeModal()">X</button>
                 <div class="row">
                     <div class="col-md-12 col-lg-8">
                         <div class="items">
@@ -1200,8 +1201,8 @@
                             <div class="summary-item"><span class="text">Total</span><span class="price" id="total">R$0,00</span>
                             </div>
                             <div class="input-group mb-3">
-                                <input id="numeroWhatsapp" type="tel" onkeydown="return mascaraTelefone(event)" class="form-control" placeholder="Digite seu whatsapp com DDD" >
-                            </div>
+                                <input id="numeroWhatsapp"  type="tel" onkeydown="return mascaraTelefone(event)" class="form-control" placeholder="Digite seu whatsapp com DDD" >
+                              </div>
                             <button type="button" class="btn btn-primary btn-lg btn-block" onclick="comprar()">Comprar</button>
                         </div>
                     </div>
