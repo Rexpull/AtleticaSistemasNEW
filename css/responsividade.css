@@ -1,5 +1,5 @@
 @media(max-width: 1024px){
-  .text-head,
+
   .down-gif{
     display: none;
   }
@@ -44,11 +44,15 @@
     #retrobg-ground{
         height: 29%;
     }
+    .nav_bar img{
+      display: none;
+    }
+    .links{
+      gap: 10px !important;
+    }
     .about-p{
         gap: 10px;
-        width: 100%;
-        padding-right: 268px;
-        transform: translateY(-55px);
+        width: 100% !important;
         padding: 10px 41px 3px 0px;
     }
     .p-text-footer{
@@ -56,7 +60,7 @@
         padding: 0px 1px 0px 20px;
     }
     .texto-about{
-        display: flex;
+        display: flex !important;
     }
     .divisoria-left,
     .divisoria-right{
@@ -118,19 +122,37 @@
         transform: translateX(-1292px) scale(2) !important;
       }
       .parallax__layer__5{
-        transform: translateX(-1764px) scale(1.5) !important;
-        height: 780px;
+        transform: translateX(-1626px) scale(1.5) !important;
+        height: 808px;
       }
       .parallax__layer__6{
         transform: translateX(-1616px) scale(1) !important;
       }
       .slide-content{
-        width: 50%;
-        height: 50%;
-        padding-right: 1000px;
+        padding-top: 20px;
+        width: 30% !important;
+        height: 346px !important;
+        padding-right: 1300px;
       }
       .swiper-slide{
         filter: brightness(100%) !important;
+        height: 326px !important;
+        width: 210px !important;
+      }
+      .slide-content-atletica{
+        width: 600px;
+        height: 140px !important;
+      }
+      .content-atletica h1{
+        font-size: 10px !important;
+      }
+      .content-atletica a{
+        font-size: 9px !important;
+        background-size: 80px;
+      }
+      .card-atle{
+        height: 100% !important;
+        width: 150px !important;
       }
 
 }
@@ -200,5 +222,19 @@
   .parallax__layer__5{
     transform: translateX(-1891px) scale(1.5) !important;
     height: 780px;
+  }
+}
+@media(max-width: 393px){
+  .gallery-3d .card-3d {
+    position: absolute;
+    width: 100%;
+    
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(150px);
+    }
+  .card-3d{
+    width: 10px;
+    height: 150px;
   }
 }
