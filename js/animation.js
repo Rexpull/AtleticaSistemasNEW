@@ -41,17 +41,17 @@ observerdiretoria.observe(document.querySelector('.swiper-diretoria'));
 
 
 const atletica = document.querySelector('.atletica');
-atletica.classList.remove('animate__bounceInLeft');
+atletica.classList.remove('animate__bounceIn');
 
 // Create the observer, same as before:
 const observeratletica = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-        atletica.classList.add('animate__bounceInLeft');
+        atletica.classList.add('animate__bounceIn');
       return;
     }
 
-    atletica.classList.remove('animate__bounceInLeft');
+    atletica.classList.remove('animate__bounceIn');
   });
 });
 
@@ -81,17 +81,17 @@ observerrodape.observe(document.querySelector('.home_rodape'));
 
 
 const rodapetext = document.querySelector('.about-background');
-rodapetext.classList.remove('animate__jackInTheBox');
+rodapetext.classList.remove('animate__bounceIn');
 
 // Create the observer, same as before:
 const observerrodapetext = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-        rodapetext.classList.add('animate__jackInTheBox');
+        rodapetext.classList.add('animate__bounceIn');
       return;
     }
 
-    rodapetext.classList.remove('animate__jackInTheBox');
+    rodapetext.classList.remove('animate__bounceIn');
   });
 });
 
