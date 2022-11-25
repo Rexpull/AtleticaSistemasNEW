@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="css/rodape_background.css">
     <link rel="stylesheet" href="css/rpgui.min.css" >
     <link rel="stylesheet" href="css/parallax.css">
-    <link rel="stylesheet" href="teste.css">
+    
     <link rel="stylesheet" href="css/particles.js-master/demo/css/style.css">
     <link rel="stylesheet" href="css/faleconosco.css"> <!--Fale conosco-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
@@ -130,7 +130,7 @@
                                         <hr>
                                         <div class="link_wrapper">
                                             <button onclick="" class="toast-enable cta-button" role="button">Adicionar!</button>
-                                            <div class="icon">
+                                            <div class="icon_carrousel">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
                                                 <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
                                             </svg>
@@ -1059,52 +1059,57 @@
     </div>
 </div>
     <!--S:Parte do Marcus (Menubar) -->
-    <nav class="navigation" id="menu" style="z-index: 9999999;">
-        <ul>
-            <li class="list_menu active">
-                <a href="#">
-                    <span class="icon-menu">
-                        <ion-icon name="home-outline"></ion-icon>
-                    </span>
-                    <span class="text"></span>
-                </a>
-            </li>
-            <li class="list_menu">
-                <a href="#carousel">
-                    <span class="icon-menu">
-                        <ion-icon name="people-outline"></ion-icon>
-                    </span>
-                    <span class="text"></span>
-                </a>
-            </li>
-            <li class="list_menu">
-                <a href="#mes">
-                    <span class="icon-menu">
-                        <ion-icon name="chatbox-outline"></ion-icon>
-                    </span>
-                    <span class="text"></span>
-                </a>
-            </li>
-            <li class="list_menu">
-                <a href="#">
-                    <span class="icon-menu">
-                        <ion-icon name="camera-outline"></ion-icon>
-                    </span>
-                    <span class="text"></span>
-                </a>
+    <div class="menu" style="z-index: 9999999;">
+        <div class="navigation">
+            <ul>
+                <li class="list_menu active">
+                    <a href="#s1">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
 
-            </li>
-            <li class="list_menu">
-                <a href="#" onclick="$('#carrinhoModal').modal('show')">
-                    <span class="icon-menu">
-                        <ion-icon name="settings-outline"></ion-icon>
-                    </span>
-                    <span class="text"></span>
-                </a>
-            </li>
-            <div class="indicator"></div>
-        </ul>
-    </nav>
+                        </span>
+                        <p class="comentario">Home</p>
+                    </a>
+                </li>
+                <li class="list_menu">
+                    <a href="#s2">
+                        <span class="icon_menu">
+                            <ion-icon name="id-card-outline"></ion-icon>
+
+                        </span>
+                        <p class="comentario">Diretoria</p>
+                    </a>
+                </li>
+                <li class="list_menu">
+                    <a href="#s3">
+                        <span class="icon_menu">
+                            <ion-icon name="help-circle-outline"></ion-icon>
+
+                        </span>
+                        <p class="comentario">Sobre</p>
+                    </a>
+                </li>
+                <li class="list_menu">
+                    <a href="#" title="Fale Conosco" onclick="openForm()">
+                        <span class="icon_menu">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <p class="comentario">Fale Conosco</p>
+                    </a>
+                </li>
+                <li class="list_menu">
+                    <a href="#" onclick="$('#carrinhoModal').modal('show')">
+                        <span class="icon_menu">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <p class="comentario">Carrinho</p>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+    </div>
+    
     
 
     <!--S:Parte do Willian (Carrinho) -->
