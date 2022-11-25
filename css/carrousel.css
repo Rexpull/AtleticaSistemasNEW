@@ -26,7 +26,7 @@
 
 .card-3d {
     width: 100%;
-    height: 600px;
+    height: 500px;
     max-width:600px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
@@ -154,6 +154,7 @@
   position: absolute;
   transform: translateX(-110px);
   font-size: 13px;
+  margin-top: 15px;
 }
 
 .icon_carrousel{
@@ -166,6 +167,8 @@
   top: 0;
   z-index: -1;
   transition: all .35s;
+  margin-top: 15px;
+
 }
 
 .icon_carrousel svg{
