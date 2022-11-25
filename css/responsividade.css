@@ -1,0 +1,204 @@
+@media(max-width: 1024px){
+  .text-head,
+  .down-gif{
+    display: none;
+  }
+  .gallery-3d-wrapper{
+    transform: translateX(159px);
+  }
+  .btn-left,
+  .btn-right{
+    display: none;
+  }
+  .ICON{
+    width: 40px;
+  }
+  .p-text-footer{
+    font-size: 11px !important;
+    line-height: 15px !important;
+    padding: 0px 1px 0px 20px;
+  }
+  .card-dir{
+    width: 200px;
+    background: none;
+  }
+  .texts{
+    display: none;
+  }
+  .parallax__layer__3{
+    transform: translateX(-1292px) scale(2.5) !important;
+  }
+  .parallax__layer__4{
+    transform: translateX(-1292px) scale(2) !important;
+  }
+  .parallax__layer__5{
+    transform: translateX(-1466px) scale(1.5) !important;
+    height: 780px;
+  }
+  .parallax__layer__6{
+    transform: translateX(-1616px) scale(1) !important;
+  }
+
+}
+@media(max-width: 768px){
+    #retrobg-ground{
+        height: 29%;
+    }
+    .about-p{
+        gap: 10px;
+        width: 100%;
+        padding-right: 268px;
+        transform: translateY(-55px);
+        padding: 10px 41px 3px 0px;
+    }
+    .p-text-footer{
+        font-size: 9px !important;
+        padding: 0px 1px 0px 20px;
+    }
+    .texto-about{
+        display: flex;
+    }
+    .divisoria-left,
+    .divisoria-right{
+        display: none;
+    }
+    .icone-sparta{
+        display: none;
+    }
+    .gallery-3d-wrapper{
+        width: 200px;
+        transform: translateX(143px);
+        padding-top: 451px;
+    }
+    .gallery-3d{
+        gap: 10px;
+        animation: rotate 60s linear infinite;
+    }
+    .card-3d{
+        width: 200px;
+        height: 250px;
+    }
+    .card-3d-img{
+        width: 150px;
+        height: 150px;
+    }
+    @keyframes rotate {
+        from {
+          transform: perspective(2200px) rotateY(0deg);
+        }
+        to {
+          transform: perspective(1200px) rotateY(360deg);
+        }
+      }
+      .gallery-3d .card-3d {
+        position: absolute;
+        width: 100%;
+        
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(280px);
+      }
+      .btn-right,
+      .btn-left{
+        display: none;
+      }
+      .participantes{
+        width: 50px;
+      }
+      .glitch{
+        font-size: 18px !important;
+      }
+      .card-dir{
+        margin: 0 10px !important;
+      }
+      .parallax__layer__3{
+        transform: translateX(-1292px) scale(2.5) !important;
+      }
+      .parallax__layer__4{
+        transform: translateX(-1292px) scale(2) !important;
+      }
+      .parallax__layer__5{
+        transform: translateX(-1764px) scale(1.5) !important;
+        height: 780px;
+      }
+      .parallax__layer__6{
+        transform: translateX(-1616px) scale(1) !important;
+      }
+      .slide-content{
+        width: 50%;
+        height: 50%;
+        padding-right: 1000px;
+      }
+      .swiper-slide{
+        filter: brightness(100%) !important;
+      }
+
+}
+@media(max-width: 425px){
+    .gallery-3d{
+        gap: 10px;
+        animation: rotate 60s linear infinite;
+    }
+    @keyframes rotate {
+        from {
+          transform: perspective(2200px) rotateY(0deg);
+        }
+        to {
+          transform: perspective(1200px) rotateY(360deg);
+        }
+    }
+    .gallery-3d-wrapper{
+        width: 130px;
+        transform: translateX(68px);
+        padding-top: 451px;
+    }
+    .gallery-3d .card-3d {
+    position: absolute;
+    width: 100%;
+    
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(180px);
+    }
+    .card-3d{
+        width: 100px;
+        height: 170px;
+    }
+    .card-3d-img{
+        width: 100px;
+        height: 100px;
+    }
+    .text-head{
+      display: none;
+    }
+    #retrobg-ground{
+      height: 22%;
+  }
+  .p-text-footer{
+    font-size: 9px !important;
+    line-height: 12px !important;
+    padding: 0px 1px 0px 20px;
+  }
+  .ICON{
+    width: 36px;
+  }
+  .btn-footer{
+    width: 110px;
+    font-size: 7px !important;
+    height: 40px;
+  }
+  .down-gif{
+    display: none;
+  }
+
+  .parallax__layer__3{
+    transform: translateX(-1728px) scale(2.5) !important;
+  }
+  .parallax__layer__4{
+    transform: translateX(-1517px) scale(2) !important;
+  }
+  .parallax__layer__5{
+    transform: translateX(-1891px) scale(1.5) !important;
+    height: 780px;
+  }
+}
