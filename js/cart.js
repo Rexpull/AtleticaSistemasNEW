@@ -188,7 +188,7 @@ Total: *${total.toLocaleString("pt-br", {
   })}*
 Dados de Pagamento:
 PIX (34) 91234-5678
-  `;
+Um momento que já entraremos em contato com você!`;
 
   fetch(
     "http://ec2-3-93-23-254.compute-1.amazonaws.com:3001/notificacao?" +
