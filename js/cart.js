@@ -147,6 +147,7 @@ function enviarCarrinhoAoWhatsapp(numeroWhats) {
   const numeroWhatsFormatado = "55" + numeroWhats.replace(/\D/g, "") + "@c.us";
   const carrinhoArmazenado = JSON.parse(localStorage.getItem("carrinho")) || [];
 
+  let total = 0;
   const mensagem = carrinhoArmazenado
     .map((item) => {
       const subtotal = (
@@ -155,18 +156,29 @@ function enviarCarrinhoAoWhatsapp(numeroWhats) {
         style: "currency",
         currency: "BRL",
       });
-      return `Item ${
+      total += window.produtosDisponiveis[item.id].preco * item.quantity;
+      return `*- ${item.quantity}x ${
         window.produtosDisponiveis[item.id].nome
-      }, valor ${subtotal}`;
+      }, valor ${subtotal}*`;
     })
     .join("\n");
 
-    
+  const mensagemFinal = `Olá! Obrigado por pedir conosco!
+Abaixo está o resumo do seu pedido:
+${mensagem}
+Total: *${total.toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  })}*
+Dados de Pagamento:
+PIX (34) 91234-5678
+  `;
+
   fetch(
     "http://ec2-3-93-23-254.compute-1.amazonaws.com:3001/notificacao?" +
       new URLSearchParams({
         numeroWhatsapp: numeroWhatsFormatado,
-        mensagem: mensagem,
+        mensagem: mensagemFinal,
       })
   );
 
