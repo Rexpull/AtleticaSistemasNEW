@@ -109,7 +109,8 @@
             <div class="parallax__layer parallax__layer__6" style="z-index: 12;">
                 <img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_6.png?raw=true" />
             </div>
-            <img src="img/down.gif" alt="" class="down-gif">
+
+            <a class="down" href="#carou"><span></span><span></span><span></span></a>
 
             <div class="parallax__cover " style="z-index: 12;">
 
@@ -117,7 +118,7 @@
 
                 
 
-                <div class="carrossel animate__animated animate__zoomIn">
+                <div id="carou" class="carrossel animate__animated animate__zoomIn">
                     <div class="gallery-3d-wrapper">
                         <div class="gallery-3d">
 
@@ -144,9 +145,12 @@
                         </div>
                     </div>
 
-                    <div class="btn_cart_carrousel">
-                        <span>CARRINHO</span>
-                    </div>
+                        <button class="learn-more" onclick="$('#carrinhoModal').modal('show')">
+                          <span class="circle_btn" aria-hidden="true">
+                            <span class="icon_btn arrow_btn"></span>
+                          </span>
+                          <span class="button-text">Carrinho</span>
+                        </button>
 
                 </div>
             </div>
@@ -1187,13 +1191,13 @@
           <h1>FALE CONOSCO</h1>
       
           <label for="nome"><b>Nome</b></label>
-          <input type="text" placeholder="Digite seu Email" name="nome" required>
+          <input type="text" placeholder="Digite seu Nome" name="nome" required>
       
           <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Digite seu Password" name="email" required>
+          <input type="text" placeholder="Digite seu Email" name="email" required>
       
           <label for="mensage"><b>Mensagem</b></label>
-          <input type="text" placeholder="Digite seu Mensagem" name="mensage" required>
+          <input type="text" placeholder="Digite sua Mensagem" name="mensage" required>
       
    
           <button type="submit" class="btn" onclick="sendMail(); return false">Enviar</button>
@@ -1236,18 +1240,30 @@
 
     <!--S:Menubar START-->
     <script>
-        const list = document.querySelectorAll('.list');
-        function activeLink() {
+        const list = document.querySelectorAll('.list_menu');
+        function activeLink(){
             list.forEach((item) =>
-                item.classList.remove('active'));
-            this.classList.add('active');
+            item.classList.remove('active'));
+            this.classList.add('active')
         }
         list.forEach((item) =>
-            item.addEventListener('click', activeLink));
+        item.addEventListener('click',activeLink))
     </script>
     <!--E:Menubar END-->
 
+    <script>
+        $(function () {
+	$("a[href*=carou]").on("click", function (e) {
+		e.preventDefault();
+		$("html, body").animate(
+			{ scrollTop: $($(this).attr("href")).offset().top },
+			500,
+			"linear"
+		);
+	});
+});
 
+    </script>
     
 <!-- scripts -->
 

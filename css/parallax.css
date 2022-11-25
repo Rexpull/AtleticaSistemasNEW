@@ -113,18 +113,72 @@ height: 100%;
 }
 
 
-.down-gif{
-  position: fixed;
-  bottom: 4%;
-  z-index: 9999;
+.down{
+  position: absolute;
+  bottom: 0;
   left: 50%;
-  width: 65px;
-  height: 65px;
+  z-index: 9999;
+  display: inline-block;
+  
+  text-decoration: none;
+  padding-top: 60px;
+  width: 111px;
+  height: 111px;
+  
+  
 }
 
-@for $i from 0 through $parallax__layers {
-  $x: ($parallax__layers - $i) / 2;
-  .parallax__layer__#{$i}{
-     transform: translateZ(-100 * $x#{px}) scale($x + 1);
+
+.down span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 27px;
+  height: 27px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb 2s infinite;
+  animation: sdb 2s infinite;
+  opacity: 0;
+  box-sizing: border-box;
+  
+}
+.down span:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.down span:nth-of-type(2) {
+  top: 16px;
+  -webkit-animation-delay: .20s;
+  animation-delay: .20s;
+}
+.down span:nth-of-type(3) {
+  top: 32px;
+  -webkit-animation-delay: .4s;
+  animation-delay: .4s;
+}
+@-webkit-keyframes sdb {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

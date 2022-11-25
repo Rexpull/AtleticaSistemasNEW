@@ -18,7 +18,7 @@ body{
 .navigation{
     position: relative;
     width: 60px;
-    height: 300px;
+    height: 330px;
     background: rgba(255, 255, 255, 0.56);
     display: flex;
     justify-content: center;
@@ -96,7 +96,7 @@ background: red;
 .indicator{
     position: absolute;
     width: 70px;
-    top: -32%;
+    top: 2.5%;
     height: 70px;
    /* From https://css.glass */
     background: rgba(182, 67, 67, 0.56);
@@ -106,49 +106,24 @@ background: red;
     -webkit-backdrop-filter: blur(2.4px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    z-index: -11 !important;
     transition: 0.5s;
 }
-.indicator::before{
-    content: '';
-    position: absolute;
-    top: 35px;
-    left: 28px;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border-radius: 50%;
-    box-shadow: 15px 18px blue;
-    z-index: 7;
 
-}
-.indicator::after{
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: -28px;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border-radius: 50%;
-    box-shadow: -15px 18px blue;
-    z-index: 7;
-}
 
 .navigation ul li:nth-child(1).active ~ .indicator{
-    transform: translateY(calc(90px*1)) translateX(20px);
+    transform: translateY(calc(60px*0)) translateX(27px);
 }
 .navigation ul li:nth-child(2).active ~ .indicator{
-    transform: translateY(calc(80px*2)) translateX(20px);
+    transform: translateY(calc(60px*1)) translateX(27px);
 }
 .navigation ul li:nth-child(3).active ~ .indicator{
-    transform: translateY(calc(80px*3)) translateX(20px);
+    transform: translateY(calc(60px*2)) translateX(27px);
 }
 .navigation ul li:nth-child(4).active ~ .indicator{
-    transform: translateY(calc(80px*4)) translateX(20px);
+    transform: translateY(calc(60px*3)) translateX(27px);
 }
 .navigation ul li:nth-child(5).active ~ .indicator{
-    transform: translateY(calc(80px*5)) translateX(20px);
+    transform: translateY(calc(60px*4)) translateX(27px);
 }
 
 
