@@ -231,3 +231,8 @@ function mascaraTelefone(event) {
     return false;
   }
 }
+
+
+function closeModal(){
+  $('#carrinhoModal').modal('hide');
+}

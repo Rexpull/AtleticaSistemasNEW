@@ -1152,7 +1152,7 @@
         aria-hidden="true">
         <div class="shopping-cart modal-dialog" role="document">
             <div class="modal-content rpgui-container framed-golden-2">
-
+                <button style="position: absolute; right:0; width:30px; height:30px; cursor: pointer; z-index: 999;" onclick="closeModal()">X</button>
                 <div class="row">
                     <div class="col-md-12 col-lg-8">
                         <div class="items">
@@ -1201,7 +1201,7 @@
                             <div class="summary-item"><span class="text">Total</span><span class="price" id="total">R$0,00</span>
                             </div>
                             <div class="input-group mb-3">
-                                <input id="numeroWhatsapp" type="text" class="form-control" placeholder="Digite seu whatsapp com DDD" >
+                                <input id="numeroWhatsapp"  type="tel" onkeydown="return mascaraTelefone(event)" class="form-control" placeholder="Digite seu whatsapp com DDD" >
                               </div>
                             <button type="button" class="btn btn-primary btn-lg btn-block" onclick="comprar()">Comprar</button>
                         </div>

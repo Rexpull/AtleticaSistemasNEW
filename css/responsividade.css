@@ -224,7 +224,7 @@
     height: 780px;
   }
 }
-@media(max-width: 393px){
+@media(max-width: 400px){
   .gallery-3d .card-3d {
     position: absolute;
     width: 100%;
@@ -237,4 +237,27 @@
     width: 10px;
     height: 150px;
   }
+  .col-md-1{
+    width: 70px;
+    right: 40%;
+  }
+  .menu{
+    top: 25%;
+    width: 80%;
+  }
+  .form-popup{
+    left: 25%;
+    width: 70%;
+    top:  1% !important;
+  }
+  .p-text-footer{
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 50% !important;
+  }
+
+
 }
+
+
+
