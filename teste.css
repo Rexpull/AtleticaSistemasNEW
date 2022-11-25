@@ -87,7 +87,7 @@ body{
 }
 .navigation ul li:hover a .icon{
 
-background: red;
+    background: red;
     box-shadow: #232327 -1px 5px  5px ;
     border-radius: 50%;
     color: white;
@@ -159,3 +159,4 @@ border: 1px solid rgba(255, 255, 255, 0.57);
     transform: translateY(0px);
     opacity: 1;
 }
+

@@ -161,6 +161,7 @@ function enviarCarrinhoAoWhatsapp(numeroWhats) {
     })
     .join("\n");
 
+    
   fetch(
     "http://ec2-3-93-23-254.compute-1.amazonaws.com:3001/notificacao?" +
       new URLSearchParams({

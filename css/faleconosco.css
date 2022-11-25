@@ -15,6 +15,9 @@
     background-color: white;
   }
   
+  .form-container h1{
+    color: rgb(14, 66, 236);
+  }
   /* Full-width input fields */
   .form-container input[type=text], .form-container input[type=password] {
     width: 100%;
@@ -22,7 +25,9 @@
     margin: 5px 0 22px 0;
     border: none;
     background: #f1f1f1;
-    color: white !important;
+    color: black !important;
+    text-shadow: none !important;
+    font-weight: 700;
   }
   
   /* When the inputs get focus, do something */
@@ -33,7 +38,7 @@
   
   /* Set a style for the submit/login button */
   .form-container .btn {
-    background-color: #04AA6D;
+    
     color: white;
     padding: 16px 20px;
     border: none;
@@ -44,11 +49,70 @@
   }
   
   /* Add a red background color to the cancel button */
-  .form-container .cancel {
-    background-color: red;
-  }
-
+  
   .form-container input{
     color: white !important;
 
   }
+  
+
+
+  .form-container .accept {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    padding: 1.5em 2.6em;
+    border-radius: 0;
+    color: #05811a;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    transition: all 250ms ease;
+  }
+  .form-container .accept:before, .form-container .accept:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid;
+    transition: 0.25s;
+  }
+  .form-container .accept:before {
+    transform: translateX(-0.25em) translateY(0.25em);
+  }
+  .form-container .accept:after {
+    transform: translateX(0.25em) translateY(-0.25em);
+  }
+  .form-container .accept:hover:before, .form-container .accept:hover:after {
+    transform: translateX(0) translateY(0);
+    box-shadow: 0 27px 55px rgba(45, 204, 66, 0.3), 0 17px 17px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0);
+  }
+
+
+
+
+
+  .form-container .cancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  color: #505959;
+  letter-spacing: 2px;
+  padding: 1.2em 2.2em;
+  margin-top: 1em;
+  border: solid black 1px;
+}
+.form-container .cancel:hover {
+  color: red;
+  box-shadow: 0 27px 55px rgba(211, 31, 31, 0.5), 0 17px 17px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0);
+}
+
+
