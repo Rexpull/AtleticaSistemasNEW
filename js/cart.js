@@ -76,10 +76,13 @@ const codigoProduto = `
                   </div>
                   <div class="col-md-4 quantity">
                       <label for="quantity">Quantidade:</label>
-                      <input id="quantity" type="number" value ="[QUANTIDADE]" class="form-control quantity-input">
+                      <input id="quantity" type="number" value="[QUANTIDADE]" class="form-control quantity-input">
                   </div>
                   <div class="col-md-3 price">
                       <span>[PRICE]</span>
+                  </div>
+                  <div onclick="removerDoCarrinho('[ID]')" class="col-md-1 price" style="position: absolute; right: 0; top: 10px; cursor: pointer;">
+                      <span>X</span>
                   </div>
               </div>
           </div>
@@ -104,6 +107,18 @@ function adicionarAoCarrinho(id) {
   localStorage.setItem("carrinho", JSON.stringify(carrinhoArmazenado));
 }
 
+function fecharCarrinho() {
+  $("#carrinhoModal").modal("hide");
+}
+
+function removerDoCarrinho(id) {
+  const carrinhoArmazenado = JSON.parse(localStorage.getItem("carrinho")) || [];
+  const novoCarrinho = carrinhoArmazenado.filter((item) => item.id !== id);
+
+  localStorage.setItem("carrinho", JSON.stringify(novoCarrinho));
+  atualizarPopup();
+}
+
 function atualizarPopup() {
   const carrinhoArmazenado = JSON.parse(localStorage.getItem("carrinho")) || [];
   let subtotal = 0;
@@ -122,7 +137,8 @@ function atualizarPopup() {
           style: "currency",
           currency: "BRL",
         })
-      );
+      )
+      .replace("[ID]", item.id);
   });
 
   document.querySelector(".shopping-cart #subtotal").innerHTML =
