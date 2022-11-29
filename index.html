@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="css/rpgui.min.css" >
     <link rel="stylesheet" href="css/parallax.css">
     <link rel="stylesheet" href="css/responsividade.css">
-    
+    <link rel="stylesheet" href="login.css">
     
     <link rel="stylesheet" href="css/particles.js-master/demo/css/style.css">
     <link rel="stylesheet" href="css/faleconosco.css"> <!--Fale conosco-->
@@ -109,9 +109,8 @@
             <div class="parallax__layer parallax__layer__6" style="z-index: 12;">
                 <img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_6.png?raw=true" />
             </div>
-
+            <a href="login_1.html" target="_blank" class="adm"><ion-icon name="person-add-outline"></ion-icon></a>
             <a class="down" href="#carou"><span></span><span></span><span></span></a>
-
             <div class="parallax__cover " style="z-index: 12;">
 
                 <div id="particles-js"></div> <!--Particulas BG-->
@@ -131,7 +130,7 @@
                                     <div class="card-3d-content">
                                         <hr>
                                         <div class="link_wrapper">
-                                            <button onclick="" class="toast-enable cta-button" role="button">Adicionar!</button>
+                                            <button onclick="" class="toast-enable cta-button" onclick="toast1()" role="button">Adicionar!</button>
                                             <div class="icon_carrousel">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
                                                 <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
@@ -195,7 +194,7 @@
     
                             <div class="image-content rpgui-container framed">
                                 <div class="card-image">
-                                    <img id="fotoPerfil" src="" alt="perfil" class="card-img">
+                                    <img id="fotoPerfil" src=""  alt="perfil" class="card-img">
                                 </div>
                             </div>
                             
@@ -1094,7 +1093,7 @@
     </div>
 </div>
     <!--S:Parte do Marcus (Menubar) -->
-    <div class="menu" style="z-index: 9999999;">
+    <div class="menu" id="menu" style="z-index: 9999999;">
         <div class="navigation">
             <ul>
                 <li class="list_menu active">
@@ -1212,7 +1211,22 @@
         </div>
     </div>
     
-
+    <div class="container" id="adm">
+        <div class="row login-form">
+            <form class="container">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Senha</label>
+                  <input type="password" class="form-control" id="senha">
+                </div>
+                <button type="reset" class="btn btn-primary" onclick="logar()">Logar</button>
+            </form>
+        </div>
+    </div>
+    
     <!--S:Parte do Teodoro (Fale Conosco) -->
     <div class="form-popup rpgui-container framed-golden " id="myForm">
         <form action="/action_page.php" class="form-container">
@@ -1239,9 +1253,7 @@
           
         </form>
         <script>
-        function openForm() {
-          document.getElementById("myForm").style.display = "block";
-        }
+       
       </script>
       <script>
           function sendMail() {
@@ -1256,6 +1268,20 @@
       </div>
 
     
+    <script>
+        function logar(){
+    var email = document.getElementById('email')
+    var senha = document.getElementById('senha')
+
+    if(email.value == 'admin@admin.com' && senha.value == 'admin'){
+        localStorage.setItem("acesso", true)
+        alert("voce vai ser direcionado")
+        window.location.href='index.html'
+    }else{
+        alert("usuario ou senha invalido!")
+    }
+}
+    </script>
     <!--
     Scripts ===========================================================================================================
     -->
