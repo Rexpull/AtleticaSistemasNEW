@@ -39,14 +39,14 @@ html{
     min-height: 0px; 
     height: max-content; 
     width: calc(100% - 0px); 
-    padding: 15px 50px;
+    padding: 0px 50px;
     justify-content: space-between;
     z-index: 3;
 }
 .nav_bar img{
     place-self: center start;
-    min-width: 190px;
-    max-width: 250px;
+   
+    max-width: 190px;
     width: 100%;
     height: max-content; 
     margin: 0px; 
@@ -59,7 +59,7 @@ html{
 .text-head{
   width: 80em;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   gap: 5%;
   align-items: center;
 }
@@ -82,7 +82,7 @@ html{
     color: white !important;
     font-weight:500;
     z-index: 99999 !important;
-    font-size: 2em !important;
+    font-size: 1.5em !important;
    
 }
 .links a:hover{
@@ -118,7 +118,7 @@ html{
     
     font-weight: 400;
     position: absolute;
-    font-size: 7.5rem !important;
+    font-size: 5rem !important;
     user-select: none;
     color: rgb(235, 235, 235) !important;
     font-family: top;
@@ -128,19 +128,19 @@ html{
 }
 
 .texts h1:nth-of-type(1){
-  top: 10%;
-  left: -50%;
+  top: 27%;
+  left: -4%;
   color: #f1eb35 !important;
 }
 .texts h1:nth-of-type(2){
-  left: 25%;
-  bottom: 22%;
+  left: 50%;
+  bottom: 25%;
 }
 
 
 @keyframes typing {
     from { width: 0 }
-    to { width: 135% }
+    to { width: 90% }
 }
 
 
@@ -276,11 +276,14 @@ html{
   position: relative;
   padding: 0;
   border: none;
-  font-size: 1.25rem;
+  font-size: 1.0rem;
   animation: infinite animate-border var(--animation-duration) var(--animation-easing);
   animation-play-state: running;
   font-family: "Press Start 2p", sans-serif;
   margin: 2rem;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+
   line-height: 1.4;
   cursor: pointer;
   letter-spacing: 0.05em;
@@ -300,7 +303,7 @@ html{
 
 .button-label {
   display: block;
-  padding: .5rem;
+  padding: .1rem;
   margin: 1.5rem;
   z-index: -1;
 }
@@ -471,9 +474,9 @@ html{
   position: absolute;
   left: 10px;
   bottom: 10px;
-  width: 45px;
+  width: 35px;
   z-index: 999;
-  height: 45px;
+  height: 35px;
   background: transparent;
 }
 

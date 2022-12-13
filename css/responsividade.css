@@ -22,139 +22,27 @@
     width: 200px;
     background: none;
   }
-  .texts{
-    display: none;
+  .texts h1{
+    font-size: 4rem !important;
   }
-  .parallax__layer__3{
-    transform: translateX(-1292px) scale(2.5) !important;
+  .texts h1:nth-of-type(1){
+    top: 32%;
+    left: 4%;
+    color: #f1eb35 !important;
   }
-  .parallax__layer__4{
-    transform: translateX(-1292px) scale(2) !important;
+  .texts h1:nth-of-type(2){
+    left: 45%;
+    bottom: 32%;
   }
-  .parallax__layer__5{
-    transform: translateX(-1466px) scale(1.5) !important;
-    height: 780px;
-  }
-  .parallax__layer__6{
-    transform: translateX(-1616px) scale(1) !important;
-  }
-
+}
+.nav_bar img{
+  width: 90%;
+}
+.links a{
+  font-size: 90% !important;
 }
 @media(max-width: 768px){
-    #retrobg-ground{
-        height: 29%;
-    }
-    .nav_bar img{
-      display: none;
-    }
-    .links{
-      gap: 10px !important;
-    }
-    .about-p{
-        gap: 10px;
-        width: 100% !important;
-        padding: 10px 41px 3px 0px;
-    }
-    .p-text-footer{
-        font-size: 9px !important;
-        padding: 0px 1px 0px 20px;
-    }
-    .texto-about{
-        display: flex !important;
-    }
-    .divisoria-left,
-    .divisoria-right{
-        display: none;
-    }
-    .icone-sparta{
-        display: none;
-    }
-    .gallery-3d-wrapper{
-        width: 200px;
-        transform: translateX(143px);
-        padding-top: 451px;
-    }
-    .gallery-3d{
-        gap: 10px;
-        animation: rotate 60s linear infinite;
-    }
-    .card-3d{
-        width: 200px;
-        height: 250px;
-    }
-    .card-3d-img{
-        width: 150px;
-        height: 150px;
-    }
-    @keyframes rotate {
-        from {
-          transform: perspective(2200px) rotateY(0deg);
-        }
-        to {
-          transform: perspective(1200px) rotateY(360deg);
-        }
-      }
-      .gallery-3d .card-3d {
-        position: absolute;
-        width: 100%;
-        
-        transform-origin: center;
-        transform-style: preserve-3d;
-        transform: rotateY(calc(var(--i) * 45deg)) translateZ(280px);
-      }
-      .btn-right,
-      .btn-left{
-        display: none;
-      }
-      .participantes{
-        width: 50px;
-      }
-      .glitch{
-        font-size: 18px !important;
-      }
-      .card-dir{
-        margin: 0 10px !important;
-      }
-      .parallax__layer__3{
-        transform: translateX(-1292px) scale(2.5) !important;
-      }
-      .parallax__layer__4{
-        transform: translateX(-1292px) scale(2) !important;
-      }
-      .parallax__layer__5{
-        transform: translateX(-1626px) scale(1.5) !important;
-        height: 808px;
-      }
-      .parallax__layer__6{
-        transform: translateX(-1616px) scale(1) !important;
-      }
-      .slide-content{
-        padding-top: 20px;
-        width: 30% !important;
-        height: 346px !important;
-        padding-right: 1300px;
-      }
-      .swiper-slide{
-        filter: brightness(100%) !important;
-        height: 326px !important;
-        width: 210px !important;
-      }
-      .slide-content-atletica{
-        width: 600px;
-        height: 140px !important;
-      }
-      .content-atletica h1{
-        font-size: 10px !important;
-      }
-      .content-atletica a{
-        font-size: 9px !important;
-        background-size: 80px;
-      }
-      .card-atle{
-        height: 100% !important;
-        width: 150px !important;
-      }
-
+  
 }
 @media(max-width: 425px){
     .gallery-3d{
